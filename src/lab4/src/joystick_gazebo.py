@@ -95,7 +95,7 @@ if __name__ == '__main__':
             g.trajectory.points = [ JointTrajectoryPoint(positions=(q4), velocities=[0]*8, time_from_start=rospy.Duration(0.008))]
             #q3= np.add(q4,-q01)
         print("Axes_F: ",np.round(q4[0:6],2), "Pos: ",np.round(joy_xdes,2)," Cal: ",np.round(x_cal,2))
-     
+        #test 
         
         robot_client.send_goal(g)
         robot_client.wait_for_result()
