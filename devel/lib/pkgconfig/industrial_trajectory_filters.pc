@@ -1,0 +1,8 @@
+prefix=/home/irobto/lab_ws/devel
+
+Name: industrial_trajectory_filters
+Description: Description of industrial_trajectory_filters
+Version: 0.7.3
+Cflags: -I/home/irobto/lab_ws/src/ur5/industrial_core/industrial_trajectory_filters/include -I/opt/ros/kinetic/share/orocos_kdl/../../include -I/usr/include/eigen3
+Libs: -L${prefix}/lib -lindustrial_trajectory_filters /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.2
+Requires: class_loader moveit_core moveit_ros_planning pluginlib trajectory_msgs

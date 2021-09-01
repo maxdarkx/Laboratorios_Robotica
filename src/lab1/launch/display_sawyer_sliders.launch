@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+<param name="robot_description" command="$(find xacro)/xacro.py --inorder $(find sawyer_description)/urdf/sawyer.urdf.xacro"/>
+<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+<arg name="gui" default="True"/>
+<param name="use_gui" value="$(arg gui)"/>
+<arg name="config_file" value="$(find lab1)/config/sawyer.rviz"/>
+<node name="rviz" pkg="rviz" type="rviz" respawn="false" output="screen" args
+="-d $(arg config_file)"/>
+</launch>
+<!-- limites de las articulaciones
+	right_j0 = [-3.05, 3.05]
+	head_pan = [-5.1, 0.91]
+	right_j1 = [-3.81, 2.27]
+	right_j2 = [-3.04, 3.04]
+	right_j3 = [-3.04, 3.04]
+	right_j4 = [-2.98, 2.98]
+	right_j5 = [-2.98, 2.98]
+	right_j6 = [-4.71, 4.71] -->
+<!--rostopic echo /joint_states=... name: right_j0, head_pan, right_j1, right_j2, right_j3, right_j4, right_j5, right_j6]-->
